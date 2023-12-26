@@ -20,5 +20,5 @@ outputs:
     description: 'Your output description here'
 
 runs:
-  using: oven-sh/setup-bun@v1
+  using: node/latest
   main: src/index.ts
