@@ -30,5 +30,8 @@ export async function run(): Promise<void> {
   const otpWindow = (Number(core.getInput('otp-window')) || 5) * 1000
   const token = await generateToken(totpURL, otpWindow)
 
+  core.info(`The URI is ${totpURL}`)
+  core.info(`The token is ${token}`)
+
   return core.setOutput('otp-token', token)
 }
