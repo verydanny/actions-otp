@@ -12,5 +12,5 @@ This is used to convert a OTP secret into a 6 digit code.
 ## Outputs
 
 | Name        | Description                                          |
-| ------------|                                                      |
+| ----------- | ---------------------------------------------------- |
 | `otp-token` | The 6 digit auth token generated based on passed URL |
