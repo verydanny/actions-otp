@@ -21,6 +21,4 @@ outputs:
 
 runs:
   using: oven-sh/setup-bun@v1
-    with:
-      bun-version: latest
   main: src/index.ts
