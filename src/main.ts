@@ -10,6 +10,7 @@ export async function run(): Promise<void> {
     const ms: string = core.getInput('milliseconds')
 
     core.setOutput('ENV IS', process.env.NODE_ENV)
+    core.debug(`ENV IS ${process.env.NODE_ENV}`)
   } catch (error) {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
