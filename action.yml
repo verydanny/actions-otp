@@ -20,5 +20,7 @@ outputs:
     description: 'Your output description here'
 
 runs:
-  using: node20
-  main: dist/index.js
+  using: oven-sh/setup-bun@v1
+    with:
+      bun-version: latest
+  main: src/index.ts
