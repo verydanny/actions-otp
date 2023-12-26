@@ -9,27 +9,19 @@ branding:
 
 # Define your inputs here.
 inputs:
-  otp-secret:
-    description: 'OTP `secret`, usually in the `otpauth//` URL as `(?|&)secret={otp-secret}`'
+  otp-url:
+    description: OTP URL, usually in the format of `otpauth//` URL
     required: true
     default: ''
-  period:
-    description: Length of time, in seconds, before the OTP is invalid
+  otp-window:
+    description: If under this window (in seconds), wait to generate fresh OTP
     required: false
-    default: 30
-  algorithm:
-    description: The algorithm used for calculating the HMAC
-    required: false
-    default: 'sha1'
-  is-google-auth:
-    description: True if generated with Google Authenticator, which uses a different encoding
-    required: false
-    default: false
+    default: 5
 
 # Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  otp-token:
+    description: 'The OTP Token'
 
 runs:
   main: dist/index.js

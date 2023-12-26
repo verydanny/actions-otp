@@ -4,10 +4,8 @@ This is used to convert a OTP secret into a 6 digit code.
 
 ## Inputs
 
-| Name             | Description                                                                  | Default     | Examples                           |
-| ---------------- | ---------------------------------------------------------------------------- | ----------- | ---------------------------------- |
-| `otp-secret`     | OTP `secret`, usually in the `otpauth//` URL as `(?|&)secret={otp-secret}`   | `undefined` | `EXAMPLEREELHNPNHVPEXAMPLEEXAMPLE` |
-| `period`         | Length of time, in seconds, before the OTP is invalid                        | `30`        |                                    |
-| `algorithm`      | The algorithm used for calculating the HMAC                                  | `sha1`      |                                    |
-| `is-google-auth` | True if generated with Google Authenticator, which uses a different encoding | `false`     |                                    |
+| Name         | Description                                                   | Default     | Examples                                     |
+| ------------ | ------------------------------------------------------------- | ----------- | -------------------------------------------- |
+| `otp-url`    | OTP URL, usually in the format of `otpauth://totp/`           | `undefined` | `otpauth://totp/ACME:AzureDiamond?issuer...` |
+| `otp-window` | If under this window (in seconds), wait to generate fresh OTP | `5`         | `5, 10, 15`                                  |
 
