@@ -31,9 +31,10 @@ export async function run(): Promise<void> {
   const token = await generateToken(totpURL, otpWindow)
 
   // We need to mask future uses of otp-token
+  core.setOutput('otp-token', token)
   core.setSecret('otp-token')
 
-  return core.setOutput('otp-token', token)
+  return
 }
 
 run()
