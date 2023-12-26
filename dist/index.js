@@ -24760,6 +24760,7 @@ async function run() {
     return core.setOutput('otp-token', token);
 }
 exports.run = run;
+run();
 
 
 /***/ }),

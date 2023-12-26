@@ -35,3 +35,5 @@ export async function run(): Promise<void> {
 
   return core.setOutput('otp-token', token)
 }
+
+run()
