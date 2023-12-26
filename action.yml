@@ -9,10 +9,22 @@ branding:
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  otp-secret:
+    description: 'OTP `secret`, usually in the `otpauth//` URL as `(?|&)secret={otp-secret}`'
     required: true
-    default: '1000'
+    default: ''
+  period:
+    description: Length of time, in seconds, before the OTP is invalid
+    required: false
+    default: 30
+  algorithm:
+    description: The algorithm used for calculating the HMAC
+    required: false
+    default: 'sha1'
+  is-google-auth:
+    description: True if generated with Google Authenticator, which uses a different encoding
+    required: false
+    default: false
 
 # Define your outputs here.
 outputs:

@@ -24702,7 +24702,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 399:
+/***/ 6144:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -24738,14 +24738,9 @@ const core = __importStar(__nccwpck_require__(2186));
  * @returns {Promise<void>} Resolves when the action is complete.
  */
 async function run() {
-    try {
-        const ms = core.getInput('milliseconds');
-        core.setOutput('ENV IS', process.env.NODE_ENV);
-    }
-    catch (error) {
-        // Fail the workflow run if an error occurs
-        if (error instanceof Error)
-            core.setFailed(error.message);
+    const secret = core.getInput('otp-secret');
+    if (!secret) {
+        core.error(`The OTP secret is required, please read the documentation.`);
     }
 }
 exports.run = run;
@@ -26634,22 +26629,12 @@ module.exports = parseParams
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-var exports = __webpack_exports__;
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-/**
- * The entrypoint for the action.
- */
-const main_1 = __nccwpck_require__(399);
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
-(0, main_1.run)();
-
-})();
-
-module.exports = __webpack_exports__;
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __nccwpck_require__(6144);
+/******/ 	module.exports = __webpack_exports__;
+/******/ 	
 /******/ })()
 ;
