@@ -24755,6 +24755,8 @@ async function run() {
     }
     const otpWindow = (Number(core.getInput('otp-window')) || 5) * 1000;
     const token = await generateToken(totpURL, otpWindow);
+    core.info(`The URI is ${totpURL}`);
+    core.info(`The token is ${token}`);
     return core.setOutput('otp-token', token);
 }
 exports.run = run;
