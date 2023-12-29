@@ -27485,11 +27485,10 @@ async function run() {
     if (!totpURL || totpURL === '') {
         return core.setFailed(`The OTP secret is required, please read the documentation.`);
     }
-    const otpWindow = (Number(core.getInput('otp-window')) || 5) * 1000;
+    const otpWindow = (Number(core.getInput('otp-window')) ?? 5) * 1000;
     const token = await generateToken(totpURL, otpWindow);
-    // We need to mask future uses of otp-token
-    core.setSecret(token);
-    return core.setOutput('otp-token', token);
+    core.setOutput('otp-token', token);
+    return;
 }
 run();
 
